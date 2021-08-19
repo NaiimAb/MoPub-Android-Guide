@@ -1,0 +1,28 @@
+package com.naiimab.firstguide;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ThirdActivity extends AppCompatActivity {
+
+    Button letStart;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_third);
+
+        letStart = findViewById(R.id.startBtn2);
+
+        letStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goIntent = new Intent(ThirdActivity.this, GuideList.class);
+                startActivity(goIntent);
+            }
+        });
+    }
+}
